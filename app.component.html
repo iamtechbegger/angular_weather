@@ -1,0 +1,58 @@
+
+<mat-form-field>
+  <mat-label>Select a Country</mat-label>
+  <mat-select [(value)]="selected" (selectionChange)="selectChangeHandler($event)">    
+    <mat-option *ngFor="let country of countries.data; let i=index" value={{countries.data[i].country}}> {{countries.data[i].country}}</mat-option>    
+  </mat-select>
+</mat-form-field>
+
+<p>Country you have selected: {{selectedCountry}}</p>
+
+<mat-form-field>
+  <mat-label>Select a State</mat-label>
+  <mat-select [(value)]="selected1" (selectionChange)="selectChangeHandlerState($event)">    
+    <mat-option *ngFor="let state of states.data; let i=index" value={{states.data[i].state}}> {{states.data[i].state}}</mat-option>    
+  </mat-select>
+</mat-form-field> 
+<p>State you have selected: {{selected1}}</p>
+
+<table border="1"> 
+    <thead> 
+        <th>City</th>
+        <th>Air Quality</th>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let city of cities.data; let i=index">
+        <td>{{cities.data[i].city}}</td>
+        <td>{{cities.data[i].city}}</td>        
+    </tr>
+    </tbody>
+  </table>
+
+<!--<mat-form-field>
+  <mat-label>Select a City</mat-label>
+  <mat-select [(value)]="selected2" (selectionChange)="selectChangeHandlerCity($event)">    
+    <mat-option *ngFor="let city of cities.data; let i=index" value={{cities.data[i].city}}> {{cities.data[i].city}}</mat-option>    
+  </mat-select>
+</mat-form-field> 
+<p>And the City you selected: {{selected2}}</p>-->
+
+<!--
+<select [(value)]="selected" (change)="selectChangeHandler($event)">
+    <option value="0">--Select State--</option>
+    
+    <option *ngFor="let country of countries.data; let i=index" value={{countries.data[i].country}}>        
+        {{countries.data[i].country}}    
+    </option>
+   </select>
+  
+  <p>You have selected: {{selectedCountry}}</p>
+
+  <select (change)="selectChangeHandlerState($event)">
+    <option value="0">--Select State--</option>
+    
+    <option *ngFor="let state of states.data; let i=index" value={{states.data[i].state}}>        
+        {{states.data[i].state}}    
+    </option>
+   </select>
+-->
